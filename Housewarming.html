@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Open House – Housewarming Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ebe6db;--card:#f6f2e9;--ink:#1d2a24;--green:#22362d;--brass:#a98550;--mute:#667068;--line:rgba(29,42,36,.16);--lt:#ebe6db;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141c18;--card:#1c2621;--ink:#ebe6db;--green:#0f1613;--brass:#c6a36a;--mute:#9ba69e;--line:rgba(235,230,219,.16)}}
+:root[data-theme="dark"]{--bg:#141c18;--card:#1c2621;--ink:#ebe6db;--green:#0f1613;--brass:#c6a36a;--mute:#9ba69e;--line:rgba(235,230,219,.16)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:56px}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 1rem/1.7 'Hanken Grotesk',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:400;line-height:1.02;margin:0}
+h2{font-size:clamp(2.4rem,9vw,4rem)}
+.it{font-style:italic}.sm{font-size:.82rem;color:var(--mute);letter-spacing:.04em}
+section{padding:5.5rem 1.4rem;max-width:880px;margin:0 auto}
+.btn{display:inline-block;font:500 .78rem 'Hanken Grotesk',sans-serif;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--ink);background:none;border:1px solid currentColor;padding:1rem 1.7rem;min-height:48px;cursor:pointer;transition:background .3s,color .3s,transform .2s}
+.btn:hover{background:var(--ink);color:var(--bg)}.btn:active{transform:scale(.97)}
+.btn.br{background:var(--brass);border-color:var(--brass);color:#16201b}.btn.br:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.ph{position:relative;background:linear-gradient(155deg,var(--c1,#c9bfa9),var(--c2,#8f9a86)) center/cover;overflow:hidden}
+.ph:not(.has)::after{content:attr(data-l);position:absolute;left:0;right:0;bottom:.8rem;text-align:center;font-size:.68rem;letter-spacing:.1em;color:rgba(255,255,255,.75)}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:center;align-items:center;gap:1.1rem;padding:calc(.7rem + env(safe-area-inset-top,0px)) .7rem .7rem;font-size:.78rem;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav a{color:var(--ink);text-decoration:none}
+nav button{font:inherit;color:var(--ink);background:none;border:1px solid var(--line);border-radius:99px;padding:.25rem .8rem;cursor:pointer}
+nav button[aria-pressed=true]{background:var(--brass);color:#16201b;border-color:var(--brass)}
+/* hero */
+#top{background:var(--green);color:var(--lt);min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5.5rem 1.4rem 3.5rem;gap:1.5rem}
+#top .arch{width:min(66vw,290px);aspect-ratio:3/4;border-radius:999px 999px 0 0;--c1:#d9b77e;--c2:#4c6a58;box-shadow:0 0 0 8px rgba(169,133,80,.0),0 0 0 1px rgba(198,163,106,.6),0 0 0 10px var(--green),0 0 0 11px rgba(198,163,106,.45);animation:in 1.4s both}
+#top .arch::before{content:"";position:absolute;left:50%;bottom:0;width:46%;height:56%;margin-left:-23%;border-radius:999px 999px 0 0;background:linear-gradient(#f6dba0,#d9a85f);box-shadow:0 0 50px rgba(246,219,160,.55)}
+@keyframes in{from{opacity:0;transform:translateY(18px)}}
+#top h1{font-size:clamp(3rem,13vw,5.6rem);animation:in 1.2s .25s both}
+#top p{margin:0;color:#cfc8b6;animation:in 1.2s .45s both}
+#top .by{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#c6a36a}
+#top .btn{color:var(--lt);animation:in 1.2s .65s both}#top .btn:hover{background:var(--lt);color:#16201b}
+/* details */
+#visit{text-align:center}
+.date{font:400 clamp(2.4rem,10vw,4.2rem)/1.05 'Newsreader',serif;margin:1.2rem 0 .3rem}
+.facts{margin:2.2rem auto;max-width:520px;text-align:left}
+.facts div{display:flex;justify-content:space-between;gap:1.5rem;padding:1rem 0;border-top:1px solid var(--line)}
+.facts div:last-child{border-bottom:1px solid var(--line)}
+.facts small{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);padding-top:.35rem;white-space:nowrap}
+.facts span{text-align:right;font-size:1.05rem}
+.row{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center}
+/* tour */
+#tour{max-width:none;background:var(--card)}
+#tour .w{max-width:880px;margin:0 auto}
+.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.6rem 0}
+.chips button{font:400 .9rem 'Hanken Grotesk',sans-serif;color:var(--ink);background:none;border:1px solid var(--line);border-radius:99px;padding:.65rem 1.2rem;min-height:44px;cursor:pointer;transition:.25s}
+.chips button[aria-selected=true]{background:var(--green);color:var(--lt);border-color:var(--green)}
+.room{display:none}.room.on{display:grid;gap:1.4rem;animation:fade .6s}
+@media(min-width:720px){.room.on{grid-template-columns:1.3fr 1fr;align-items:end}}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}}
+.room .ph{aspect-ratio:4/3}
+.room h3{font-size:2.2rem;margin-bottom:.6rem}.room p{margin:0;color:var(--mute)}
+/* day */
+.day{margin-top:2.4rem}
+.day div{display:grid;grid-template-columns:5.5rem 1fr;gap:1rem;padding:1.2rem 0;border-top:1px solid var(--line)}
+.day div:last-child{border-bottom:1px solid var(--line)}
+.day b{font:500 1.5rem 'Newsreader',serif;color:var(--brass)}.day h3{font-size:1.5rem}.day p{margin:.2rem 0 0;color:var(--mute);font-size:.95rem}
+/* gallery */
+#snap h2{margin-bottom:2rem}
+.g{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:120px;gap:.6rem}
+.g .ph{cursor:zoom-in;transition:transform .35s}.g .ph:hover{transform:scale(1.015)}
+.g1{grid-column:1;grid-row:1/4;--c1:#d9b77e;--c2:#4c6a58;border-radius:140px 140px 0 0}.g2{grid-column:2;grid-row:1/3;--c1:#a8b39b;--c2:#5d7366}
+.g3{grid-column:2;grid-row:3/6;--c1:#caa88c;--c2:#7b8f79}.g4{grid-column:1;grid-row:4/6;--c1:#b9c0b0;--c2:#8a7a60}.g5{grid-column:1/3;grid-row:6/8;--c1:#e0c58f;--c2:#55705f}
+#lb{position:fixed;inset:0;z-index:45;background:rgba(14,20,17,.9);display:grid;place-items:center;opacity:0;visibility:hidden;transition:.3s;padding:1.2rem}#lb.on{opacity:1;visibility:visible}
+#lb .ph{width:min(88vw,520px);height:min(76svh,640px);transform:scale(.95);transition:transform .35s}#lb.on .ph{transform:none}
+/* notes */
+#note{background:var(--green);color:var(--lt);max-width:none;text-align:center}
+#note .w{max-width:620px;margin:0 auto}
+#note blockquote{margin:1.5rem 0 2.4rem;font:italic clamp(1.4rem,5vw,1.9rem)/1.5 'Newsreader',serif;color:#e4dcc8}
+.tips{display:grid;gap:1.1rem;text-align:left}
+@media(min-width:640px){.tips{grid-template-columns:repeat(3,1fr)}}
+.tips div{border-top:1px solid rgba(198,163,106,.5);padding-top:.8rem}.tips b{font:500 1.35rem 'Newsreader',serif;color:#c6a36a;display:block}.tips p{margin:.2rem 0 0;font-size:.9rem;color:#cfc8b6}
+/* rsvp */
+#rsvp{max-width:560px;text-align:center}
+.ch{display:grid;gap:.8rem;margin:2rem 0 1.2rem}@media(min-width:520px){.ch{grid-template-columns:1fr 1fr}}
+.ch .btn[aria-pressed=true]{background:var(--green);color:var(--lt);border-color:var(--green)}
+#f{display:none;flex-direction:column;gap:1rem;text-align:left}#f.show{display:flex}
+#f label{font-size:.82rem;color:var(--mute)}
+#f input,#f textarea{display:block;width:100%;font:inherit;font-size:1rem;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--ink);border-radius:0;padding:.6rem 0}
+#f textarea{min-height:70px;resize:vertical}#cnt[hidden]{display:none}.err{color:#b0432c;margin:0;font-size:.85rem;min-height:1.2em}
+#ok{display:none}#ok p{color:var(--mute)}
+footer{text-align:center;padding:2rem 1rem 3rem}
+/* edit */
+.ed,#eb{display:none}
+body.editing .ed{display:block;width:100%;font:inherit;font-size:.8rem;margin-top:.8rem;padding:.5rem;background:transparent;border:1px dashed var(--brass);color:inherit}
+body.editing #eb{display:block}
+#eb{position:fixed;bottom:calc(.8rem + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);z-index:60;background:var(--ink);color:var(--bg);font-size:.78rem;padding:.55rem 1rem;border-radius:99px;white-space:nowrap}
+body.editing [contenteditable]{outline:1px dashed var(--brass);outline-offset:3px}
+body.editing .ph{outline:2px dashed var(--brass);outline-offset:-6px;cursor:pointer}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition-duration:.01s!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><a href="#top">Home</a><a href="#visit">Details</a><a href="#tour">Tour</a><a href="#rsvp">RSVP</a><button id="edt" aria-pressed="false">Edit</button></nav>
+<div id="eb">Edit mode: tap text or photos to change them</div>
+<input type="file" id="file" accept="image/*" hidden>
+
+<header id="top">
+  <div class="arch ph" data-l="Home exterior"></div>
+  <div class="by">A housewarming</div>
+  <h1 class="it">We've moved in.<br>Come say hello.</h1>
+  <p>With <span data-e data-k="a">Karthik</span> &amp; <span data-e data-k="b">Nisha</span>, at their first home</p>
+  <a class="btn" href="#visit">Step inside</a>
+</header>
+
+<section id="visit">
+  <p class="sm rv">Open house</p>
+  <div class="date rv" data-e data-k="date">Sunday, 15 November 2026</div>
+  <p class="it rv" style="font-size:1.4rem;margin:0;color:var(--mute)">Doors open at <span data-e data-k="time">11:00 AM</span></p>
+  <div class="facts rv">
+    <div><small>Home of</small><span><span data-e data-k="a">Karthik</span> &amp; <span data-e data-k="b">Nisha</span> Rao</span></div>
+    <div><small>Address</small><span data-e data-k="addr">24, Lakeview Road, Indiranagar, Bengaluru</span></div>
+    <div><small>Come for</small><span data-e>Puja, lunch, tea and a tour</span></div>
+  </div>
+  <input class="ed" placeholder="GOOGLE MAPS LINK" data-mi style="max-width:520px;margin:0 auto 1.4rem">
+  <div class="row"><a class="btn br" href="#" target="_blank" rel="noopener" data-map>Get directions</a><a class="btn" href="#" target="_blank" rel="noopener" id="cal">Add to calendar</a></div>
+  <p class="sm" style="margin-top:1.6rem">Sample details. Tap Edit to make it yours.</p>
+</section>
+
+<section id="tour"><div class="w">
+  <h2 class="rv">Take a little tour</h2>
+  <p class="rv" style="color:var(--mute);max-width:30rem">A peek at the rooms you'll see on the day. Tap to wander.</p>
+  <div class="chips" role="tablist">
+    <button role="tab" aria-selected="true" data-r="0">Living room</button><button role="tab" aria-selected="false" data-r="1">Kitchen</button><button role="tab" aria-selected="false" data-r="2">Garden</button><button role="tab" aria-selected="false" data-r="3">Terrace</button>
+  </div>
+  <div class="room on"><div class="ph" data-l="Living room photo" style="--c1:#d9c39a;--c2:#6f8473"></div><div><h3 data-e>The living room</h3><p data-e>Where the sofa finally fits and the afternoon light does the decorating.</p></div></div>
+  <div class="room"><div class="ph" data-l="Kitchen photo" style="--c1:#b9c3b1;--c2:#8a7a60"></div><div><h3 data-e>The kitchen</h3><p data-e>Heart of the house. Expect chai, snacks and a very proud host.</p></div></div>
+  <div class="room"><div class="ph" data-l="Garden photo" style="--c1:#a6b88f;--c2:#4f6b55"></div><div><h3 data-e>The garden</h3><p data-e>Small, green and already loved. Please admire the tulsi.</p></div></div>
+  <div class="room"><div class="ph" data-l="Terrace photo" style="--c1:#e3c590;--c2:#5a7566"></div><div><h3 data-e>The terrace</h3><p data-e>Best seat in the house at sunset. Come up for tea.</p></div></div>
+</div></section>
+
+<section id="day">
+  <h2 class="rv">How the day goes</h2>
+  <div class="day rv">
+    <div><b data-e>11:00</b><span><h3 data-e>Griha pravesh puja</h3><p data-e>A short ceremony to bless the home.</p></span></div>
+    <div><b data-e>1:00</b><span><h3 data-e>Lunch together</h3><p data-e>A simple sit-down meal for everyone.</p></span></div>
+    <div><b data-e>4:00</b><span><h3 data-e>Tea and the tour</h3><p data-e>Wander through every room at your own pace.</p></span></div>
+  </div>
+</section>
+
+<section id="snap">
+  <h2 class="it rv">A few frames of home</h2>
+  <div class="g"><div class="ph g1" data-l="Entrance"></div><div class="ph g2" data-l="Details"></div><div class="ph g3" data-l="The couple"></div><div class="ph g4" data-l="Corner"></div><div class="ph g5" data-l="Together at home"></div></div>
+</section>
+<div id="lb"><div class="ph"></div></div>
+
+<section id="note"><div class="w">
+  <h2 class="rv">Our door is open</h2>
+  <blockquote class="rv" data-e>A house becomes a home when the people we love walk through it. We would be so happy to share ours with you.</blockquote>
+  <div class="tips rv">
+    <div><b data-e>Parking</b><p data-e>Street parking on Lakeview Road, and visitor spots inside the gate.</p></div>
+    <div><b data-e>Gifts</b><p data-e>Just bring yourselves. Your blessings are plenty.</p></div>
+    <div><b data-e>Dress</b><p data-e>Comfortable and festive. Shoes come off at the door.</p></div>
+  </div>
+</div></section>
+
+<section id="rsvp">
+  <div id="q"><h2>Will you drop by?</h2>
+    <div class="ch"><button class="btn" id="yes" aria-pressed="false">Yes, I'll be there</button><button class="btn" id="no" aria-pressed="false">Sorry, can't make it</button></div>
+    <form id="f" novalidate>
+      <label>Your name<input type="text" id="gn" autocomplete="name"></label>
+      <label id="cnt">Number of guests<input type="number" id="gc" min="1" max="20" value="1" inputmode="numeric"></label>
+      <label>A message for the hosts (optional)<textarea id="gm"></textarea></label>
+      <p class="err" id="err" role="alert"></p><button class="btn br" type="submit" style="align-self:center">Send reply</button>
+    </form></div>
+  <div id="ok"><h2 class="it" id="okT"></h2><p id="okM"></p></div>
+</section>
+<footer class="sm">Open House · A housewarming invitation template</footer>
+
+<script>
+const $=id=>document.getElementById(id),Q=s=>[...document.querySelectorAll(s)];
+/* tour tabs */
+Q('.chips button').forEach(b=>b.onclick=()=>{Q('.chips button').forEach(x=>x.setAttribute('aria-selected',x===b));Q('.room').forEach((r,i)=>r.classList.toggle('on',i==b.dataset.r))});
+/* edit */
+let ed=false,tgt=null;
+$('edt').onclick=()=>{ed=!ed;document.body.classList.toggle('editing',ed);$('edt').setAttribute('aria-pressed',ed);$('edt').textContent=ed?'Done':'Edit';
+ Q('[data-e]').forEach(n=>ed?n.setAttribute('contenteditable','true'):n.removeAttribute('contenteditable'))};
+document.addEventListener('input',e=>{const t=e.target,k=t.dataset&&t.dataset.k;
+ if(k)Q('[data-k="'+k+'"]').forEach(n=>{if(n!==t)n.textContent=t.textContent});
+ if(t.dataset&&'mi' in t.dataset){const u=t.value.trim();Q('[data-map]').forEach(a=>a.href=u||'#')}});
+const txt=k=>document.querySelector('[data-k="'+k+'"]').textContent.trim();
+function mapHref(){const a=document.querySelector('[data-mi]').value.trim();return a||'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(txt('addr'))}
+Q('[data-map]').forEach(a=>a.addEventListener('click',()=>{a.href=mapHref()}));
+$('cal').onclick=()=>{const d=new Date(txt('date').replace(/^\w+day,\s*/i,'')),m=/(\d{1,2})(?::(\d{2}))?\s*(am|pm)/i.exec(txt('time'));
+ let u='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Housewarming')+'&location='+encodeURIComponent(txt('addr'));
+ if(!isNaN(d)){const p=n=>String(n).padStart(2,'0'),y=x=>x.getFullYear()+p(x.getMonth()+1)+p(x.getDate());
+  if(m){const h=+m[1]%12+(/pm/i.test(m[3])?12:0),mi=p(+(m[2]||0));u+='&dates='+y(d)+'T'+p(h)+mi+'00/'+y(d)+'T'+p(Math.min(h+5,23))+mi+'00'}
+  else{const n=new Date(d);n.setDate(n.getDate()+1);u+='&dates='+y(d)+'/'+y(n)}}
+ $('cal').href=u};
+/* photos + lightbox */
+document.addEventListener('click',e=>{const p=e.target.closest('.ph');if(!p||p.closest('#lb'))return;
+ if(ed){tgt=p;$('file').click();return}
+ if(p.closest('.g')){const l=$('lb').querySelector('.ph'),s=getComputedStyle(p);l.className='ph'+(p.classList.contains('has')?' has':'');l.dataset.l=p.dataset.l;l.style.backgroundImage=p.style.backgroundImage;
+  l.style.setProperty('--c1',s.getPropertyValue('--c1'));l.style.setProperty('--c2',s.getPropertyValue('--c2'));$('lb').classList.add('on')}});
+$('lb').onclick=()=>$('lb').classList.remove('on');addEventListener('keydown',e=>{if(e.key==='Escape')$('lb').classList.remove('on')});
+$('file').onchange=e=>{const f=e.target.files[0];if(!f||!tgt)return;const r=new FileReader();r.onload=()=>{tgt.style.backgroundImage=`url(${r.result})`;tgt.classList.add('has')};r.readAsDataURL(f);e.target.value=''};
+/* rsvp */
+let going=null;
+function pick(v){going=v;$('yes').setAttribute('aria-pressed',v);$('no').setAttribute('aria-pressed',!v);$('f').classList.add('show');$('cnt').hidden=!v;$('err').textContent=''}
+$('yes').onclick=()=>pick(true);$('no').onclick=()=>pick(false);
+$('f').onsubmit=e=>{e.preventDefault();const n=$('gn').value.trim();if(!n){$('err').textContent='Please enter your name.';$('gn').focus();return}
+ const f=n.split(' ')[0],c=Math.max(1,+$('gc').value||1);
+ $('okT').textContent=going?`See you soon, ${f}.`:`We'll miss you, ${f}.`;
+ $('okM').textContent=going?`We've saved a place for ${c} ${c>1?'guests':'guest'}. Tea, snacks and a full house tour are waiting.`:'Thank you for letting us know. We will save you a slice of the day.';
+ $('q').style.display='none';$('ok').style.display='block'};
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(x=>x.isIntersecting&&x.target.classList.add('in')),{threshold:.2});Q('.rv').forEach(n=>io.observe(n));
+</script>
+</body>
+</html>
