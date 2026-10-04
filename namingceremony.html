@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Name Is Coming – Naming Ceremony Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4efe6;--card:#fbf8f2;--ink:#26324a;--mute:#69718a;--blue:#c8d8e4;--sun:#f0c987;--clay:#d89c86;--night:#1d2740;--line:rgba(38,50,74,.16);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171d2e;--card:#1f2740;--ink:#f1ece0;--mute:#a4abc0;--blue:#31405e;--line:rgba(241,236,224,.16);--night:#10152a}}
+:root[data-theme="dark"]{--bg:#171d2e;--card:#1f2740;--ink:#f1ece0;--mute:#a4abc0;--blue:#31405e;--line:rgba(241,236,224,.16);--night:#10152a}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:56px}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 1rem/1.7 'Nunito Sans',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Young Serif',Georgia,serif;font-weight:400;line-height:1.08;margin:0}
+h2{font-size:clamp(2.1rem,8vw,3.4rem)}
+section{padding:5rem 1.4rem;max-width:860px;margin:0 auto}
+.sm{font-size:.84rem;color:var(--mute)}.c{text-align:center}
+.btn{display:inline-block;font:600 .85rem 'Nunito Sans',sans-serif;letter-spacing:.08em;text-decoration:none;color:#1d2740;background:var(--sun);border:0;border-radius:99px;padding:1rem 1.9rem;min-height:48px;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 18px rgba(240,201,135,.4)}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.97)}
+.btn.o{background:none;color:var(--ink);box-shadow:none;border:1.5px solid var(--ink)}
+:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+.ph{position:relative;background:linear-gradient(155deg,var(--c1,#d6c7b2),var(--c2,#9fb2c4)) center/cover;overflow:hidden}
+.ph:not(.has)::after{content:attr(data-l);position:absolute;left:0;right:0;bottom:.7rem;text-align:center;font-size:.68rem;letter-spacing:.08em;color:rgba(255,255,255,.8)}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:center;align-items:center;gap:1.1rem;padding:calc(.7rem + env(safe-area-inset-top,0px)) .7rem .7rem;font-size:.78rem;background:color-mix(in srgb,var(--night) 78%,transparent);backdrop-filter:blur(10px);color:#f1ece0}
+nav a{color:inherit;text-decoration:none}
+nav button{font:inherit;color:inherit;background:none;border:1px solid rgba(241,236,224,.4);border-radius:99px;padding:.25rem .8rem;cursor:pointer}
+nav button[aria-pressed=true]{background:var(--sun);color:#1d2740;border-color:var(--sun)}
+/* hero */
+#top{max-width:none;min-height:100svh;background:radial-gradient(ellipse at 50% 0,#33436a,var(--night) 70%);color:#f1ece0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:5rem 1.4rem 3.5rem;position:relative;overflow:hidden}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.7;animation:tw 3.5s ease-in-out infinite}
+@keyframes tw{50%{opacity:.15}}
+#mob{width:min(86vw,340px);margin:.5rem 0 0}
+.sw{animation:sway 5.5s ease-in-out infinite alternate}.sw:nth-of-type(2){animation-duration:7s;animation-delay:-2s}.sw:nth-of-type(3){animation-duration:6.2s;animation-delay:-4s}
+@keyframes sway{from{transform:rotate(-3.5deg)}to{transform:rotate(3.5deg)}}
+#top h1{font-size:clamp(2.2rem,9.5vw,3.8rem);margin:.8rem 0 .8rem}
+#top p{margin:0 0 1.8rem;color:#c8cfe0;max-width:26rem}
+/* reveal */
+#reveal{text-align:center}
+.tiles{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin:2rem 0 1.4rem;perspective:800px}
+.tile{width:clamp(48px,14vw,72px);height:clamp(64px,19vw,96px);border:0;padding:0;background:none;cursor:pointer;position:relative;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.3,1.3,.5,1)}
+.tile.on{transform:rotateY(180deg)}
+.tile>*{position:absolute;inset:0;display:grid;place-items:center;border-radius:16px;backface-visibility:hidden;font-family:'Young Serif',serif}
+.tile .a{background:var(--blue);font-size:1.7rem;color:var(--ink);animation:bb 3s ease-in-out infinite}
+.tile:nth-child(even) .a{animation-delay:-1.4s}
+@keyframes bb{50%{transform:translateY(-4px)}}
+.tile .b{background:var(--sun);color:#1d2740;transform:rotateY(180deg);font-size:2.4rem;box-shadow:0 8px 20px rgba(240,201,135,.45)}
+#hello{min-height:7rem;opacity:0;transform:translateY(10px);transition:.8s}#hello.on{opacity:1;transform:none}
+#hello h3{font-size:2rem}#hello p{margin:.4rem auto 0;max-width:26rem;color:var(--mute)}
+.sp{position:fixed;font-size:1.3rem;pointer-events:none;z-index:30;animation:fl 1.8s forwards}
+@keyframes fl{to{transform:translateY(-140px) rotate(60deg);opacity:0}}
+/* details */
+#visit{max-width:none;background:var(--card)}#visit .w{max-width:620px;margin:0 auto;text-align:center}
+.date{font:400 clamp(2.2rem,9vw,3.6rem)/1.08 'Young Serif',serif;margin:1rem 0 .2rem}
+.facts{margin:2rem 0;text-align:left}
+.facts div{display:flex;justify-content:space-between;gap:1.4rem;padding:.95rem 0;border-top:1px solid var(--line)}.facts div:last-child{border-bottom:1px solid var(--line)}
+.facts small{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);padding-top:.35rem;white-space:nowrap}.facts span{text-align:right}
+.row{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center}
+/* moments */
+#moments{max-width:none;padding-left:0;padding-right:0}
+#moments h2{padding:0 1.4rem;max-width:860px;margin:0 auto 1.8rem}
+.rail{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.5rem 1.4rem 1.4rem;max-width:none}
+.rail>div{flex:0 0 min(74vw,270px);scroll-snap-align:center;background:var(--card);border:1px solid var(--line);border-radius:26px 26px 90px 26px;padding:1.5rem 1.4rem 2rem;min-height:210px}
+.rail>div:nth-child(2){background:var(--blue)}.rail>div:nth-child(3){border-radius:90px 26px 26px 26px;padding-top:2.2rem}
+.rail b{font:400 1rem 'Young Serif',serif;display:block;color:var(--clay);margin-bottom:.6rem}.rail h3{font-size:1.5rem;margin-bottom:.5rem}.rail p{margin:0;font-size:.92rem;color:var(--mute)}
+.rail>div:nth-child(2) p{color:var(--ink)}
+/* photos */
+#snap h2{margin-bottom:1.8rem;text-align:center}
+.g{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:118px;gap:.6rem}
+.g .ph{cursor:zoom-in;border-radius:22px;transition:transform .35s}.g .ph:hover{transform:scale(1.015)}
+.g1{grid-column:1;grid-row:1/4;--c1:#e6c9a6;--c2:#b7c6d6;border-radius:100px 100px 22px 22px!important}.g2{grid-column:2;grid-row:1/3;--c1:#c8d8e4;--c2:#e9cfa0}.g3{grid-column:2;grid-row:3/5;--c1:#e3b9a6;--c2:#c8d8e4}.g4{grid-column:1;grid-row:4/6;--c1:#f0d7a8;--c2:#a9bccd}.g5{grid-column:2;grid-row:5/6;--c1:#b9c9d8;--c2:#e6c9a6}
+#lb{position:fixed;inset:0;z-index:45;background:rgba(14,18,34,.88);display:grid;place-items:center;opacity:0;visibility:hidden;transition:.3s;padding:1.2rem}#lb.on{opacity:1;visibility:visible}
+#lb .ph{width:min(86vw,480px);height:min(76svh,620px);border-radius:24px;transform:scale(.95);transition:transform .35s}#lb.on .ph{transform:none}
+/* rsvp */
+#rsvp{max-width:540px;text-align:center}
+#rsvp>div>p{color:var(--mute)}
+.ch{display:grid;gap:.8rem;margin:1.8rem 0 1.2rem}@media(min-width:520px){.ch{grid-template-columns:1fr 1fr}}
+.ch .btn{background:var(--card);box-shadow:none;color:var(--ink);border:1.5px solid var(--line)}.ch .btn[aria-pressed=true]{background:var(--sun);color:#1d2740;border-color:var(--sun)}
+#f{display:none;flex-direction:column;gap:1rem;text-align:left}#f.show{display:flex}
+#f label{font-size:.82rem;color:var(--mute)}
+#f input,#f textarea{display:block;width:100%;font:inherit;font-size:1rem;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.8rem 1rem;margin-top:.3rem}
+#f textarea{min-height:84px;resize:vertical}#cnt[hidden]{display:none}.err{color:#b0432c;margin:0;font-size:.85rem;min-height:1.2em}
+#ok{display:none}#ok p{color:var(--mute)}
+footer{text-align:center;padding:2rem 1rem 3rem}
+/* edit */
+.ed,#eb{display:none}
+body.editing .ed{display:block;width:100%;font:inherit;font-size:.82rem;margin-top:.8rem;padding:.6rem;background:transparent;border:1px dashed var(--clay);color:inherit}
+body.editing #eb{display:block}
+#eb{position:fixed;bottom:calc(.8rem + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);z-index:60;background:var(--ink);color:var(--bg);font-size:.78rem;padding:.55rem 1rem;border-radius:99px;white-space:nowrap}
+body.editing [contenteditable]{outline:1px dashed var(--clay);outline-offset:3px}
+body.editing .ph{outline:2px dashed var(--clay);outline-offset:-6px;cursor:pointer}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition-duration:.01s!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><a href="#top">Home</a><a href="#reveal">The name</a><a href="#visit">Details</a><a href="#rsvp">RSVP</a><button id="edt" aria-pressed="false">Edit</button></nav>
+<div id="eb">Edit mode: tap text or photos to change them</div>
+<input type="file" id="file" accept="image/*" hidden>
+
+<header id="top" id="top">
+  <svg id="mob" viewBox="0 0 300 250" aria-hidden="true"><path d="M30 18Q150 4 270 18" fill="none" stroke="#c6a36a" stroke-width="3" stroke-linecap="round"/><path d="M150 4v14" stroke="#c6a36a" stroke-width="2"/>
+  <g class="sw" style="transform-origin:60px 18px"><path d="M60 18v70" stroke="#c8cfe0" stroke-width="1.4"/><path d="M60 88a24 24 0 1 0 14 40 19 19 0 0 1-14-40z" fill="#f0c987"/></g>
+  <g class="sw" style="transform-origin:150px 12px"><path d="M150 12v110" stroke="#c8cfe0" stroke-width="1.4"/><path d="M150 122l7 14 15 2-11 11 3 15-14-8-14 8 3-15-11-11 15-2z" fill="#e6c9a6"/></g>
+  <g class="sw" style="transform-origin:240px 18px"><path d="M240 18v60" stroke="#c8cfe0" stroke-width="1.4"/><path d="M222 108a14 14 0 0 1 4-27 20 20 0 0 1 38 4 12 12 0 0 1-2 23z" fill="#c8d8e4"/></g></svg>
+  <h1>A little someone<br>is about to get a name.</h1>
+  <p>Join <span data-e data-k="p1">Rohit</span> &amp; <span data-e data-k="p2">Meera</span> as they welcome their baby with blessings, love and a name.</p>
+  <a class="btn" href="#reveal">Meet our little one</a>
+</header>
+
+<section id="reveal">
+  <p class="sm rv">Tap each card</p>
+  <h2 class="rv">Her name is…</h2>
+  <div class="tiles" id="tiles" aria-label="Baby name letter cards"></div>
+  <button class="btn o" id="all">Reveal all</button>
+  <input class="ed" id="nmIn" value="Aarohi" placeholder="BABY NAME" style="max-width:320px;margin:1rem auto 0;text-align:center">
+  <div id="hello" aria-live="polite"><h3>Hello, <span data-k="name">Aarohi</span>.</h3><p data-e>A name that means "a rising melody": a sweet new song for our home.</p></div>
+</section>
+
+<section id="visit"><div class="w">
+  <p class="sm rv">Naming ceremony</p>
+  <div class="date rv" data-e data-k="date">Sunday, 6 December 2026</div>
+  <p class="rv" style="font-size:1.15rem;margin:0;color:var(--mute)">Starting at <span data-e data-k="time">10:30 AM</span></p>
+  <div class="facts rv">
+    <div><small>Hosts</small><span><span data-e data-k="p1">Rohit</span> &amp; <span data-e data-k="p2">Meera</span> Iyer</span></div>
+    <div><small>Venue</small><span data-e data-k="addr">Sunrise Banquet Hall, 4th Block, Jayanagar, Bengaluru</span></div>
+    <div><small>Blessings of</small><span data-e>Grandparents and family</span></div>
+  </div>
+  <input class="ed" placeholder="GOOGLE MAPS LINK" data-mi style="margin:0 0 1.2rem">
+  <div class="row"><a class="btn" href="#" target="_blank" rel="noopener" data-map>Get directions</a><a class="btn o" href="#" target="_blank" rel="noopener" id="cal">Add to calendar</a></div>
+  <p class="sm" style="margin-top:1.4rem">Sample details. Tap Edit to make it yours.</p>
+</div></section>
+
+<section id="moments">
+  <h2 class="rv">How the morning unfolds</h2>
+  <div class="rail">
+    <div><b data-e>10:30</b><h3 data-e>Welcome &amp; blessings</h3><p data-e>Family gathers, elders bless the little one.</p></div>
+    <div><b data-e>11:15</b><h3 data-e>The naming</h3><p data-e>The cradle ceremony, and the name is whispered to the baby.</p></div>
+    <div><b data-e>12:30</b><h3 data-e>Lunch together</h3><p data-e>A warm meal and the first group photos.</p></div>
+  </div>
+</section>
+
+<section id="snap">
+  <h2 class="rv">Tiny hands, big love</h2>
+  <div class="g"><div class="ph g1" data-l="Newborn portrait"></div><div class="ph g2" data-l="Tiny hands"></div><div class="ph g3" data-l="With parents"></div><div class="ph g4" data-l="Sleepy smile"></div><div class="ph g5" data-l="Family"></div></div>
+</section>
+<div id="lb"><div class="ph"></div></div>
+
+<section id="rsvp">
+  <div id="q"><h2>Will you come bless our little one?</h2>
+    <p>No gifts needed. Your presence and blessings mean everything.</p>
+    <div class="ch"><button class="btn" id="yes" aria-pressed="false">Yes, we'll be there</button><button class="btn" id="no" aria-pressed="false">Sorry, can't make it</button></div>
+    <form id="f" novalidate>
+      <label>Your name<input type="text" id="gn" autocomplete="name"></label>
+      <label id="cnt">Number of guests<input type="number" id="gc" min="1" max="20" value="1" inputmode="numeric"></label>
+      <label>A blessing or message (optional)<textarea id="gm"></textarea></label>
+      <p class="err" id="err" role="alert"></p><button class="btn" type="submit" style="align-self:center">Send</button>
+    </form></div>
+  <div id="ok"><h2 id="okT"></h2><p id="okM"></p></div>
+</section>
+<footer class="sm">A Name Is Coming · A naming ceremony invitation template</footer>
+
+<script>
+const $=id=>document.getElementById(id),Q=s=>[...document.querySelectorAll(s)];
+/* stars */
+for(let i=0;i<22;i++){const s=document.createElement('i');s.className='star';s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${-Math.random()*3.5}s`;$('top').appendChild(s)}
+/* name tiles */
+let left=0;
+function build(){const n=($('nmIn').value||'Aarohi').trim();$('tiles').innerHTML='';left=0;$('hello').classList.remove('on');
+ [...n].filter(c=>c.trim()).forEach(c=>{left++;const b=document.createElement('button');b.className='tile';b.setAttribute('aria-label','Hidden letter, tap to reveal');
+  b.innerHTML=`<span class="a">?</span><span class="b">${c.toUpperCase().replace(/[<>&]/g,'')}</span>`;b.onclick=()=>flip(b);$('tiles').appendChild(b)})}
+function flip(b){if(b.classList.contains('on'))return;b.classList.add('on');b.setAttribute('aria-label','Letter revealed');if(--left===0)done()}
+function done(){$('hello').classList.add('on');for(let i=0;i<10;i++){const s=document.createElement('span');s.className='sp';s.textContent=['✦','★','♡','✧'][i%4];s.style.cssText=`left:${15+Math.random()*70}%;top:${40+Math.random()*30}%;color:#d9a84f;animation-delay:${i*.07}s`;document.body.appendChild(s);setTimeout(()=>s.remove(),2400)}}
+$('all').onclick=()=>Q('.tile').forEach((t,i)=>setTimeout(()=>flip(t),i*180));
+$('nmIn').oninput=()=>{Q('[data-k="name"]').forEach(n=>n.textContent=$('nmIn').value);build()};
+build();
+/* edit */
+let ed=false,tgt=null;
+$('edt').onclick=()=>{ed=!ed;document.body.classList.toggle('editing',ed);$('edt').setAttribute('aria-pressed',ed);$('edt').textContent=ed?'Done':'Edit';
+ Q('[data-e]').forEach(n=>ed?n.setAttribute('contenteditable','true'):n.removeAttribute('contenteditable'))};
+document.addEventListener('input',e=>{const t=e.target,k=t.dataset&&t.dataset.k;
+ if(k)Q('[data-k="'+k+'"]').forEach(n=>{if(n!==t)n.textContent=t.textContent});
+ if(t.dataset&&'mi' in t.dataset){const u=t.value.trim();Q('[data-map]').forEach(a=>a.href=u||'#')}});
+const txt=k=>document.querySelector('[data-k="'+k+'"]').textContent.trim();
+Q('[data-map]').forEach(a=>a.addEventListener('click',()=>{const v=document.querySelector('[data-mi]').value.trim();a.href=v||'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(txt('addr'))}));
+$('cal').onclick=()=>{const d=new Date(txt('date').replace(/^\w+day,\s*/i,'')),m=/(\d{1,2})(?::(\d{2}))?\s*(am|pm)/i.exec(txt('time'));
+ let u='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Naming ceremony of '+$('nmIn').value)+'&location='+encodeURIComponent(txt('addr'));
+ if(!isNaN(d)){const p=n=>String(n).padStart(2,'0'),y=x=>x.getFullYear()+p(x.getMonth()+1)+p(x.getDate());
+  if(m){const h=+m[1]%12+(/pm/i.test(m[3])?12:0),mi=p(+(m[2]||0));u+='&dates='+y(d)+'T'+p(h)+mi+'00/'+y(d)+'T'+p(Math.min(h+3,23))+mi+'00'}
+  else{const n=new Date(d);n.setDate(n.getDate()+1);u+='&dates='+y(d)+'/'+y(n)}}
+ $('cal').href=u};
+/* photos */
+document.addEventListener('click',e=>{const p=e.target.closest('.ph');if(!p||p.closest('#lb'))return;
+ if(ed){tgt=p;$('file').click();return}
+ if(p.closest('.g')){const l=$('lb').querySelector('.ph'),s=getComputedStyle(p);l.className='ph'+(p.classList.contains('has')?' has':'');l.dataset.l=p.dataset.l;l.style.backgroundImage=p.style.backgroundImage;
+  l.style.setProperty('--c1',s.getPropertyValue('--c1'));l.style.setProperty('--c2',s.getPropertyValue('--c2'));$('lb').classList.add('on')}});
+$('lb').onclick=()=>$('lb').classList.remove('on');addEventListener('keydown',e=>{if(e.key==='Escape')$('lb').classList.remove('on')});
+$('file').onchange=e=>{const f=e.target.files[0];if(!f||!tgt)return;const r=new FileReader();r.onload=()=>{tgt.style.backgroundImage=`url(${r.result})`;tgt.classList.add('has')};r.readAsDataURL(f);e.target.value=''};
+/* rsvp */
+let going=null;
+function pick(v){going=v;$('yes').setAttribute('aria-pressed',v);$('no').setAttribute('aria-pressed',!v);$('f').classList.add('show');$('cnt').hidden=!v;$('err').textContent=''}
+$('yes').onclick=()=>pick(true);$('no').onclick=()=>pick(false);
+$('f').onsubmit=e=>{e.preventDefault();const n=$('gn').value.trim();if(!n){$('err').textContent='Please enter your name.';$('gn').focus();return}
+ const f=n.split(' ')[0],c=Math.max(1,+$('gc').value||1);
+ $('okT').textContent=going?`Thank you, ${f}. See you there.`:`We'll miss you, ${f}.`;
+ $('okM').textContent=going?`We've noted ${c} ${c>1?'guests':'guest'}. Your blessings will mean the world to ${$('nmIn').value}.`:'Thank you for letting us know. Your blessings are with us all the same.';
+ $('q').style.display='none';$('ok').style.display='block'};
+const io=new IntersectionObserver(es=>es.forEach(x=>x.isIntersecting&&x.target.classList.add('in')),{threshold:.2});Q('.rv').forEach(n=>io.observe(n));
+</script>
+</body>
+</html>
