@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Make a Wish – Birthday Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff6ea;--card:#ffffff;--ink:#2b1740;--mute:#6f6280;--coral:#ff6f59;--sun:#ffc93c;--mint:#7bdcb5;--plum:#2b1740;--line:rgba(43,23,64,.14);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1029;--card:#271a3a;--ink:#fff1de;--mute:#b4a6c6;--line:rgba(255,241,222,.16);--plum:#120a1d}}
+:root[data-theme="dark"]{--bg:#1b1029;--card:#271a3a;--ink:#fff1de;--mute:#b4a6c6;--line:rgba(255,241,222,.16);--plum:#120a1d}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:56px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 'DM Sans',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;line-height:.98;letter-spacing:-.02em;margin:0}
+h2{font-size:clamp(2.4rem,10vw,4.2rem)}
+section{padding:5rem 1.4rem;max-width:880px;margin:0 auto}
+.sm{font-size:.84rem;color:var(--mute)}
+.btn{display:inline-block;font:600 .9rem 'DM Sans',sans-serif;text-decoration:none;color:#2b1740;background:var(--sun);border:2px solid #2b1740;border-radius:14px;padding:.95rem 1.7rem;min-height:48px;cursor:pointer;box-shadow:4px 4px 0 #2b1740;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 #2b1740}.btn:active{transform:translate(4px,4px);box-shadow:0 0 0 #2b1740}
+.btn.c{background:var(--coral);color:#fff}.btn.w{background:#fff}.btn.m{background:var(--mint)}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.ph{position:relative;background:linear-gradient(155deg,var(--c1,#ffb199),var(--c2,#ffd36e)) center/cover;overflow:hidden}
+.ph:not(.has)::after{content:attr(data-l);position:absolute;left:0;right:0;bottom:.7rem;text-align:center;font-size:.7rem;letter-spacing:.06em;color:rgba(43,23,64,.6)}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:center;align-items:center;gap:1.1rem;padding:calc(.7rem + env(safe-area-inset-top,0px)) .7rem .7rem;font-size:.8rem;font-weight:500;background:color-mix(in srgb,var(--plum) 80%,transparent);backdrop-filter:blur(10px);color:#fff1de}
+nav a{color:inherit;text-decoration:none}
+nav button{font:inherit;color:inherit;background:none;border:1px solid rgba(255,241,222,.45);border-radius:99px;padding:.25rem .8rem;cursor:pointer}
+nav button[aria-pressed=true]{background:var(--sun);color:#2b1740;border-color:var(--sun)}
+/* hero */
+#top{max-width:none;min-height:100svh;background:var(--plum);color:#fff1de;display:flex;flex-direction:column;align-items:center;text-align:center;padding:5rem 1.2rem 3rem;position:relative;overflow:hidden}
+#top::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(#ff6f5966,transparent 70%);top:20%;left:50%;margin-left:-210px;pointer-events:none}
+#top .k{font-weight:500;color:#ffc93c;margin:0 0 .6rem;position:relative}
+#top h1{font-size:clamp(3.4rem,17vw,7rem);position:relative}
+#top h1 em{font-style:normal;color:var(--coral)}
+#cake{width:min(82vw,330px);margin:1.2rem 0 .4rem;position:relative}
+.cd{cursor:pointer}
+.fl{transform-box:fill-box;transform-origin:50% 100%;animation:fl .35s ease-in-out infinite alternate}.cd:nth-child(2n) .fl{animation-delay:-.17s}
+@keyframes fl{from{transform:scale(1,1) rotate(-4deg)}to{transform:scale(.9,1.12) rotate(4deg)}}
+.cd.out .fl{display:none}
+.sk{opacity:0;transform-box:fill-box}.cd.out .sk{animation:sk 1.6s ease-out}
+@keyframes sk{from{opacity:.8;transform:translateY(0)}to{opacity:0;transform:translateY(-34px) scale(1.8)}}
+#hint{position:relative;margin:.2rem 0 1.2rem;color:#d8c9ea;min-height:3rem}
+#hint b{display:block;font:800 1.7rem 'Bricolage Grotesque',sans-serif;color:var(--mint)}
+#cv{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:40}
+/* details */
+#plan h2{margin-bottom:.4rem}
+.big{font:800 clamp(2.2rem,9vw,3.6rem)/1 'Bricolage Grotesque',sans-serif;color:var(--coral);margin:1.4rem 0 .3rem}
+.facts{margin:1.8rem 0}
+.facts div{display:flex;justify-content:space-between;gap:1.4rem;padding:.95rem 0;border-top:2px solid var(--ink)}.facts div:last-child{border-bottom:2px solid var(--ink)}
+.facts small{font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding-top:.35rem;white-space:nowrap}.facts span{text-align:right;font-weight:500}
+.row{display:flex;gap:.9rem;flex-wrap:wrap}
+/* stickers */
+#on h2{margin-bottom:2rem}
+.st{display:grid;gap:1rem}@media(min-width:680px){.st{grid-template-columns:repeat(3,1fr)}}
+.st div{border:2px solid var(--ink);border-radius:22px;padding:1.4rem 1.3rem 1.6rem;box-shadow:5px 5px 0 var(--ink);background:var(--sun);color:#2b1740}
+.st div:nth-child(1){transform:rotate(-1.5deg)}.st div:nth-child(2){background:var(--mint);transform:rotate(1.2deg)}.st div:nth-child(3){background:var(--coral);color:#fff;transform:rotate(-1deg)}
+.st h3{font-size:1.9rem;margin-bottom:.5rem}.st p{margin:0;font-size:.95rem}
+/* photos */
+#snap{max-width:none;padding-left:0;padding-right:0}
+#snap h2{padding:0 1.4rem;max-width:880px;margin:0 auto 1.6rem}
+.rail{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.5rem 1.4rem 1.4rem}
+.rail figure{margin:0;flex:0 0 min(62vw,240px);scroll-snap-align:center}
+.rail .ph{aspect-ratio:3/4;border:2px solid var(--ink);border-radius:18px;cursor:zoom-in;box-shadow:4px 4px 0 var(--ink)}
+.rail figure:nth-child(even) .ph{transform:translateY(18px)}
+.rail figcaption{font-weight:800;font-family:'Bricolage Grotesque',sans-serif;font-size:1.3rem;margin-top:.7rem}
+.rail figure:nth-child(even) figcaption{margin-top:1.6rem}
+.rail figure:nth-child(2) .ph{--c1:#7bdcb5;--c2:#ffd36e}.rail figure:nth-child(3) .ph{--c1:#ffc93c;--c2:#ff6f59}.rail figure:nth-child(4) .ph{--c1:#c9b6ff;--c2:#7bdcb5}.rail figure:nth-child(5) .ph{--c1:#ff8f7a;--c2:#ffc93c}
+#lb{position:fixed;inset:0;z-index:45;background:rgba(18,10,29,.9);display:grid;place-items:center;opacity:0;visibility:hidden;transition:.3s;padding:1.2rem}#lb.on{opacity:1;visibility:visible}
+#lb .ph{width:min(86vw,460px);height:min(76svh,620px);border-radius:20px;border:2px solid #fff1de;transform:scale(.95);transition:transform .35s}#lb.on .ph{transform:none}
+/* rsvp */
+#rsvp{max-width:560px;text-align:center}
+.ch{display:grid;gap:.9rem;margin:1.8rem 0 1.3rem}@media(min-width:520px){.ch{grid-template-columns:1fr 1fr}}
+.ch .btn{background:var(--card);color:var(--ink)}.ch .btn[aria-pressed=true]{background:var(--mint);color:#2b1740}
+#f{display:none;flex-direction:column;gap:1rem;text-align:left}#f.show{display:flex}
+#f label{font-size:.85rem;font-weight:500;color:var(--mute)}
+#f input,#f textarea{display:block;width:100%;font:inherit;font-size:1rem;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:12px;padding:.8rem 1rem;margin-top:.3rem}
+#f textarea{min-height:76px;resize:vertical}#sg[hidden],#cnt[hidden]{display:none}.err{color:#d6402b;margin:0;font-size:.85rem;min-height:1.2em}
+#ok{display:none}#ok p{color:var(--mute)}
+footer{text-align:center;padding:2rem 1rem 3rem}
+/* edit */
+.ed,#eb{display:none}
+body.editing .ed{display:block;width:100%;font:inherit;font-size:.82rem;margin-top:.8rem;padding:.6rem;background:transparent;border:1px dashed var(--coral);color:inherit}
+body.editing #eb{display:block}
+#eb{position:fixed;bottom:calc(.8rem + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);z-index:60;background:var(--ink);color:var(--bg);font-size:.78rem;padding:.55rem 1rem;border-radius:99px;white-space:nowrap}
+body.editing [contenteditable]{outline:1px dashed var(--coral);outline-offset:3px}
+body.editing .ph{outline:2px dashed var(--coral);outline-offset:-6px;cursor:pointer}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition-duration:.01s!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><a href="#top">Home</a><a href="#plan">The plan</a><a href="#snap">Photos</a><a href="#rsvp">RSVP</a><button id="edt" aria-pressed="false">Edit</button></nav>
+<div id="eb">Edit mode: tap text or photos to change them</div>
+<input type="file" id="file" accept="image/*" hidden>
+<canvas id="cv" aria-hidden="true"></canvas>
+
+<header id="top">
+  <p class="k">You're invited to a birthday</p>
+  <h1><span data-e data-k="n">Sanjana</span><br>turns <em data-e data-k="age">30</em></h1>
+  <svg id="cake" viewBox="0 0 300 240" aria-label="Birthday cake with three candles">
+    <ellipse cx="150" cy="222" rx="140" ry="12" fill="#120a1d" opacity=".5"/>
+    <rect x="30" y="150" width="240" height="68" rx="14" fill="#ff6f59"/><rect x="62" y="96" width="176" height="58" rx="12" fill="#ffc93c"/>
+    <path d="M30 164q0 18 16 18t16-18q0 22 16 22t16-22q0 18 16 18t16-18q0 22 16 22t16-22q0 18 16 18t16-18q0 22 16 22t16-22q0 18 16 18t16-18v-14H30z" fill="#fff6ea"/>
+    <path d="M62 108q0 14 14 14t14-14q0 18 14 18t14-18q0 14 14 14t14-14q0 18 14 18t14-18q0 14 14 14t14-14v-12H62z" fill="#fff6ea"/>
+    <circle cx="86" cy="196" r="5" fill="#7bdcb5"/><circle cx="150" cy="200" r="5" fill="#fff6ea"/><circle cx="214" cy="196" r="5" fill="#7bdcb5"/>
+    <g class="cd" id="c1" tabindex="0" role="button" aria-label="Candle 1, tap to blow out"><rect x="96" y="58" width="14" height="40" rx="3" fill="#7bdcb5"/><rect x="96" y="70" width="14" height="6" fill="#fff6ea"/><rect x="96" y="84" width="14" height="6" fill="#fff6ea"/><path class="fl" d="M103 56c-9-10-6-22 0-30 6 8 9 20 0 30z" fill="#ff9d3c"/><path class="fl" d="M103 54c-4-5-3-11 0-15 3 4 4 10 0 15z" fill="#fff0a8"/><circle class="sk" cx="103" cy="50" r="5" fill="#fff"/><rect x="82" y="30" width="42" height="70" fill="transparent"/></g>
+    <g class="cd" id="c2" tabindex="0" role="button" aria-label="Candle 2, tap to blow out"><rect x="143" y="52" width="14" height="46" rx="3" fill="#ff6f59"/><rect x="143" y="66" width="14" height="6" fill="#fff6ea"/><rect x="143" y="82" width="14" height="6" fill="#fff6ea"/><path class="fl" d="M150 50c-9-10-6-22 0-30 6 8 9 20 0 30z" fill="#ff9d3c"/><path class="fl" d="M150 48c-4-5-3-11 0-15 3 4 4 10 0 15z" fill="#fff0a8"/><circle class="sk" cx="150" cy="44" r="5" fill="#fff"/><rect x="129" y="24" width="42" height="76" fill="transparent"/></g>
+    <g class="cd" id="c3" tabindex="0" role="button" aria-label="Candle 3, tap to blow out"><rect x="190" y="58" width="14" height="40" rx="3" fill="#c9b6ff"/><rect x="190" y="70" width="14" height="6" fill="#fff6ea"/><rect x="190" y="84" width="14" height="6" fill="#fff6ea"/><path class="fl" d="M197 56c-9-10-6-22 0-30 6 8 9 20 0 30z" fill="#ff9d3c"/><path class="fl" d="M197 54c-4-5-3-11 0-15 3 4 4 10 0 15z" fill="#fff0a8"/><circle class="sk" cx="197" cy="50" r="5" fill="#fff"/><rect x="176" y="30" width="42" height="70" fill="transparent"/></g>
+  </svg>
+  <div id="hint" aria-live="polite">Tap the candles to blow them out</div>
+  <a class="btn c" href="#plan">See the plan</a>
+</header>
+
+<section id="plan">
+  <p class="sm rv">The plan</p>
+  <h2 class="rv">Dinner, dancing and one very big cake.</h2>
+  <div class="big rv" data-e data-k="date">Saturday, 21 November 2026</div>
+  <p class="rv" style="margin:0;font-size:1.2rem">From <b data-e data-k="time">7:00 PM</b> until the music stops</p>
+  <div class="facts rv">
+    <div><small>Host</small><span data-e data-k="host">Sanjana's friends &amp; family</span></div>
+    <div><small>Where</small><span data-e data-k="addr">The Terrace Loft, 5th Block, Koramangala, Bengaluru</span></div>
+    <div><small>Dress code</small><span data-e>Festive, with a pop of colour</span></div>
+  </div>
+  <input class="ed" placeholder="GOOGLE MAPS LINK" data-mi style="margin:0 0 1.2rem">
+  <div class="row"><a class="btn c" href="#" target="_blank" rel="noopener" data-map>Get directions</a><a class="btn w" href="#" target="_blank" rel="noopener" id="cal">Add to calendar</a></div>
+  <p class="sm" style="margin-top:1.4rem">Sample details. Tap Edit to make it yours.</p>
+</section>
+
+<section id="on">
+  <h2 class="rv">What's on</h2>
+  <div class="st rv">
+    <div><h3 data-e>Eat</h3><p data-e>A long rooftop dinner, live chaat counter and a cake worth waiting for.</p></div>
+    <div><h3 data-e>Dance</h3><p data-e>A playlist built by the birthday girl. Song requests welcome.</p></div>
+    <div><h3 data-e>Play</h3><p data-e>Friendly games, photo booth and a surprise or two.</p></div>
+  </div>
+</section>
+
+<section id="snap">
+  <h2 class="rv">A few chapters so far</h2>
+  <div class="rail">
+    <figure><div class="ph" data-l="Childhood photo"></div><figcaption data-e>Age 5</figcaption></figure>
+    <figure><div class="ph" data-l="Teen photo"></div><figcaption data-e>Age 15</figcaption></figure>
+    <figure><div class="ph" data-l="College photo"></div><figcaption data-e>Age 21</figcaption></figure>
+    <figure><div class="ph" data-l="Travel photo"></div><figcaption data-e>Age 27</figcaption></figure>
+    <figure><div class="ph" data-l="Recent portrait"></div><figcaption data-e>Now</figcaption></figure>
+  </div>
+</section>
+<div id="lb"><div class="ph"></div></div>
+
+<section id="rsvp">
+  <div id="q"><h2>Are you in?</h2>
+    <p class="sm">Gifts are not needed. Good vibes are.</p>
+    <div class="ch"><button class="btn" id="yes" aria-pressed="false">I'm in!</button><button class="btn" id="no" aria-pressed="false">Can't make it</button></div>
+    <form id="f" novalidate>
+      <label>Your name<input type="text" id="gn" autocomplete="name"></label>
+      <label id="cnt">Number of guests<input type="number" id="gc" min="1" max="20" value="1" inputmode="numeric"></label>
+      <label id="sg">Song request (optional)<input type="text" id="gs" placeholder="What gets you dancing?"></label>
+      <label>A message (optional)<textarea id="gm"></textarea></label>
+      <p class="err" id="err" role="alert"></p><button class="btn c" type="submit" style="align-self:center">Send</button>
+    </form></div>
+  <div id="ok"><h2 id="okT"></h2><p id="okM"></p></div>
+</section>
+<footer class="sm">Make a Wish · A birthday invitation template</footer>
+
+<script>
+const $=id=>document.getElementById(id),Q=s=>[...document.querySelectorAll(s)];
+/* confetti */
+const cv=$('cv'),cx=cv.getContext('2d');let P=[],run=false;
+function fit(){cv.width=innerWidth;cv.height=innerHeight}fit();addEventListener('resize',fit);
+function burst(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const C=['#ff6f59','#ffc93c','#7bdcb5','#c9b6ff','#fff6ea'];
+ for(let i=0;i<130;i++){const a=Math.random()*6.28,v=5+Math.random()*10;P.push({x:innerWidth/2,y:innerHeight*.45,vx:Math.cos(a)*v,vy:Math.sin(a)*v-6,w:6+Math.random()*7,h:4+Math.random()*5,r:Math.random()*6,vr:(Math.random()-.5)*.4,c:C[i%5]})}
+ if(!run){run=true;loop()}}
+function loop(){cx.clearRect(0,0,cv.width,cv.height);
+ P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vx*=.985;p.vy+=.25;p.r+=p.vr;cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;cx.fillRect(-p.w/2,-p.h/2,p.w,p.h);cx.restore()});
+ P=P.filter(p=>p.y<cv.height+20);if(P.length)requestAnimationFrame(loop);else{run=false;cx.clearRect(0,0,cv.width,cv.height)}}
+/* candles */
+let out=0;
+Q('.cd').forEach(c=>{const f=()=>{if(c.classList.contains('out'))return;c.classList.add('out');c.setAttribute('aria-label','Candle blown out');out++;
+ if(out===3){burst();$('hint').innerHTML='<b>Wish made ✦</b>Now come celebrate with us.'}else $('hint').textContent=(3-out)+' to go…'};
+ c.onclick=f;c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();f()}}});
+/* edit */
+let ed=false,tgt=null;
+$('edt').onclick=()=>{ed=!ed;document.body.classList.toggle('editing',ed);$('edt').setAttribute('aria-pressed',ed);$('edt').textContent=ed?'Done':'Edit';
+ Q('[data-e]').forEach(n=>ed?n.setAttribute('contenteditable','true'):n.removeAttribute('contenteditable'))};
+document.addEventListener('input',e=>{const t=e.target,k=t.dataset&&t.dataset.k;
+ if(k)Q('[data-k="'+k+'"]').forEach(n=>{if(n!==t)n.textContent=t.textContent});
+ if(t.dataset&&'mi' in t.dataset){const u=t.value.trim();Q('[data-map]').forEach(a=>a.href=u||'#')}});
+const txt=k=>document.querySelector('[data-k="'+k+'"]').textContent.trim();
+Q('[data-map]').forEach(a=>a.addEventListener('click',()=>{const v=document.querySelector('[data-mi]').value.trim();a.href=v||'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(txt('addr'))}));
+$('cal').onclick=()=>{const d=new Date(txt('date').replace(/^\w+day,\s*/i,'')),m=/(\d{1,2})(?::(\d{2}))?\s*(am|pm)/i.exec(txt('time'));
+ let u='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(txt('n')+"'s Birthday")+'&location='+encodeURIComponent(txt('addr'));
+ if(!isNaN(d)){const p=n=>String(n).padStart(2,'0'),y=x=>x.getFullYear()+p(x.getMonth()+1)+p(x.getDate());
+  if(m){const h=+m[1]%12+(/pm/i.test(m[3])?12:0),mi=p(+(m[2]||0));u+='&dates='+y(d)+'T'+p(h)+mi+'00/'+y(d)+'T'+p(Math.min(h+4,23))+mi+'00'}
+  else{const n=new Date(d);n.setDate(n.getDate()+1);u+='&dates='+y(d)+'/'+y(n)}}
+ $('cal').href=u};
+/* photos */
+document.addEventListener('click',e=>{const p=e.target.closest('.ph');if(!p||p.closest('#lb'))return;
+ if(ed){tgt=p;$('file').click();return}
+ if(p.closest('.rail')){const l=$('lb').querySelector('.ph'),s=getComputedStyle(p);l.className='ph'+(p.classList.contains('has')?' has':'');l.dataset.l=p.dataset.l;l.style.backgroundImage=p.style.backgroundImage;
+  l.style.setProperty('--c1',s.getPropertyValue('--c1'));l.style.setProperty('--c2',s.getPropertyValue('--c2'));$('lb').classList.add('on')}});
+$('lb').onclick=()=>$('lb').classList.remove('on');addEventListener('keydown',e=>{if(e.key==='Escape')$('lb').classList.remove('on')});
+$('file').onchange=e=>{const f=e.target.files[0];if(!f||!tgt)return;const r=new FileReader();r.onload=()=>{tgt.style.backgroundImage=`url(${r.result})`;tgt.classList.add('has')};r.readAsDataURL(f);e.target.value=''};
+/* rsvp */
+let going=null;
+function pick(v){going=v;$('yes').setAttribute('aria-pressed',v);$('no').setAttribute('aria-pressed',!v);$('f').classList.add('show');$('cnt').hidden=!v;$('sg').hidden=!v;$('err').textContent=''}
+$('yes').onclick=()=>pick(true);$('no').onclick=()=>pick(false);
+$('f').onsubmit=e=>{e.preventDefault();const n=$('gn').value.trim();if(!n){$('err').textContent='Please enter your name.';$('gn').focus();return}
+ const f=n.split(' ')[0],c=Math.max(1,+$('gc').value||1);
+ $('okT').textContent=going?`Yay, ${f}! You're on the list.`:`We'll miss you, ${f}.`;
+ $('okM').textContent=going?`We've saved ${c} ${c>1?'spots':'spot'} for you. Save the date and come hungry.`:'Thanks for letting us know. We will save you a slice of cake.';
+ $('q').style.display='none';$('ok').style.display='block';if(going)burst()};
+const io=new IntersectionObserver(es=>es.forEach(x=>x.isIntersecting&&x.target.classList.add('in')),{threshold:.2});Q('.rv').forEach(n=>io.observe(n));
+</script>
+</body>
+</html>
