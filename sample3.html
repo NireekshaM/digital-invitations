@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Wedding Story</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f1e7;--bg2:#ece4d4;--ink:#2b2a28;--mute:#6d675d;--acc:#6f7656;--gold:#b59a5b;--line:rgba(43,42,40,.16);--dk:#262522;--dkink:#f6f1e7;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1f1e1c;--bg2:#2a2926;--ink:#f1ebdf;--mute:#a8a195;--acc:#a3ab82;--line:rgba(241,235,223,.18);--dk:#141413}}
+:root[data-theme="dark"]{--bg:#1f1e1c;--bg2:#2a2926;--ink:#f1ebdf;--mute:#a8a195;--acc:#a3ab82;--line:rgba(241,235,223,.18);--dk:#141413}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 1rem/1.7 'Manrope',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;line-height:1.05;margin:0}
+h2{font-size:clamp(2.4rem,9vw,4.4rem)}
+section{padding:5.5rem 1.4rem;max-width:960px;margin:0 auto}
+.sm{font-size:.85rem;letter-spacing:.04em;color:var(--mute)}
+.it{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:center;gap:1.1rem;padding:calc(.7rem + env(safe-area-inset-top,0px)) .8rem .7rem;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);font-size:.8rem}
+nav a{color:var(--ink);text-decoration:none;padding:.3rem 0;border-bottom:1px solid transparent;transition:border-color .25s}
+nav a:hover{border-color:var(--gold)}
+nav button{font:inherit;font-size:.8rem;color:var(--ink);background:none;border:1px solid var(--line);border-radius:99px;padding:.25rem .7rem;cursor:pointer}
+nav button[aria-pressed=true]{background:var(--acc);color:#fff;border-color:var(--acc)}
+/* photos */
+.ph{position:relative;background:linear-gradient(150deg,#d8cdb8,#b4a68c) center/cover;overflow:hidden}
+.ph:not(.has)::after{content:"Couple photo";position:absolute;inset:0;display:grid;place-items:center;color:rgba(43,42,40,.5);font-size:.8rem;letter-spacing:.08em}
+.ph.sq:not(.has)::after{content:"Photo"}
+/* hero */
+#hero{max-width:none;margin:0;padding:0;height:100svh;min-height:560px;position:relative;display:flex;align-items:flex-end;color:#fbf6ec}
+#hero .ph{position:absolute;inset:0}
+#hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,18,15,.25),rgba(20,18,15,.78))}
+#hero .in{position:relative;z-index:2;width:100%;max-width:960px;margin:0 auto;padding:0 1.4rem 4.5rem}
+#hero h1{font-size:clamp(3rem,13vw,6.4rem)}
+#hero p{margin:1rem 0 2rem;font-size:1.05rem;color:#e6dcc8}
+.btn{display:inline-block;font:400 .82rem 'Manrope',sans-serif;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--ink);background:none;border:1px solid currentColor;padding:1rem 1.8rem;cursor:pointer;transition:background .3s,color .3s,transform .2s}
+.btn:hover{background:var(--ink);color:var(--bg)}.btn:active{transform:scale(.97)}
+.btn.fill{background:var(--acc);border-color:var(--acc);color:#fff}.btn.fill:hover{background:var(--ink);border-color:var(--ink)}
+#hero .btn{color:#fbf6ec}#hero .btn:hover{background:#fbf6ec;color:#262522}
+/* couple */
+#couple{text-align:center}
+#couple .ph{aspect-ratio:4/5;max-width:520px;margin:2.2rem auto;}
+.nm{font-size:clamp(2.6rem,11vw,5rem);font-family:'Cormorant Garamond',serif}
+.amp{display:block;font-style:italic;color:var(--gold);font-size:.55em;margin:.2em 0}
+#couple p.lead{max-width:30rem;margin:1.6rem auto 0;font-size:1.1rem;color:var(--mute)}
+/* timeline */
+#story h2{text-align:center;margin-bottom:3.5rem}
+.tl{position:relative;padding-left:2.6rem}
+.tl::before,.spine{content:"";position:absolute;left:.55rem;top:.4rem;bottom:.4rem;width:1px;background:var(--line)}
+.spine{background:var(--gold);bottom:auto;height:0;z-index:1;transition:height .15s}
+.ms{position:relative;margin-bottom:3.2rem}
+.ms::before{content:"";position:absolute;left:-2.55rem;top:.55rem;width:11px;height:11px;border-radius:50%;background:var(--bg);border:1px solid var(--gold);z-index:2;transition:background .4s,transform .4s}
+.ms.in::before{background:var(--gold);transform:scale(1.35)}
+.ms .yr{font:400 3.2rem/1 'Cormorant Garamond',serif;color:var(--acc)}
+.ms h3{font-size:1.7rem;margin:.5rem 0 .3rem;font-style:italic}
+.ms p{margin:0;color:var(--mute);max-width:32rem}
+.ms .ph{aspect-ratio:3/2;margin-top:1rem;max-width:420px;display:none}
+.ms .ph.has,body.editing .ms .ph{display:block}
+/* events */
+#cele{background:var(--bg2);max-width:none}
+#cele .w{max-width:960px;margin:0 auto}
+#cele h2{margin-bottom:2.5rem}
+.evs{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.ev{position:relative;background:var(--bg);border:1px solid var(--line);padding:1.7rem 1.5rem;transition:transform .3s,border-color .3s}
+.ev:hover{transform:translateY(-3px);border-color:var(--gold)}
+.ev h3{font-size:1.8rem;color:var(--acc);letter-spacing:.06em;margin-bottom:.9rem}
+.ev .r{padding:.55rem 0;border-top:1px solid var(--line);font-size:.95rem}
+.ev .r small{display:block;font-size:.72rem;letter-spacing:.1em;color:var(--mute)}
+.ev a.loc{display:inline-block;margin-top:1rem;font-size:.85rem;color:var(--ink);border-bottom:1px solid var(--gold);text-decoration:none}
+.rm{position:absolute;top:.6rem;right:.6rem;border:0;background:none;font-size:1.3rem;color:var(--mute);cursor:pointer}
+/* note */
+#note{display:grid;gap:2.2rem;align-items:center}
+@media(min-width:760px){#note{grid-template-columns:1fr 1fr}}
+#note .ph{aspect-ratio:4/5}
+#note blockquote{margin:1.4rem 0 0;font:italic 1.45rem/1.6 'Cormorant Garamond',serif;color:var(--mute)}
+/* big day */
+#day{max-width:none;background:var(--dk);color:var(--dkink);text-align:center}
+#day h2{max-width:11ch;margin:0 auto 3rem}
+.facts{display:grid;gap:1.6rem;max-width:520px;margin:0 auto 3rem}
+.facts div{border-top:1px solid rgba(181,154,91,.5);padding-top:1rem;font:400 1.9rem 'Cormorant Garamond',serif}
+.facts small{display:block;font:300 .72rem 'Manrope',sans-serif;letter-spacing:.18em;color:#b9b2a3;margin-bottom:.3rem}
+#day .btn{color:var(--dkink);margin:.4rem}#day .btn:hover{background:var(--dkink);color:var(--dk)}
+#day .btn.fill{background:var(--gold);border-color:var(--gold);color:#1d1c1a}
+/* rsvp */
+#rsvp{text-align:center;max-width:560px}
+.ch{display:grid;gap:.8rem;margin:2.2rem 0 1.4rem}
+@media(min-width:520px){.ch{grid-template-columns:1fr 1fr}}
+.ch button{padding:1rem .6rem}.ch button[aria-pressed=true]{background:var(--acc);color:#fff;border-color:var(--acc)}
+#f{display:none;text-align:left;gap:1rem;flex-direction:column}#f.show{display:flex}
+#f label{font-size:.85rem;color:var(--mute)}
+#f input,#f textarea,.ed{width:100%;font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--ink);padding:.6rem 0;border-radius:0}
+#f textarea{resize:vertical;min-height:80px}
+#cnt[hidden]{display:none}
+#ok{display:none}#ok h2{margin-bottom:1rem}
+.err{color:#a8452f;min-height:1.2em;margin:0;font-size:.9rem}
+footer{padding:2.5rem 1.4rem 3rem;text-align:center}
+/* edit mode */
+.ed,.rm,.add,#bar{display:none}
+body.editing .ed{display:block;font-size:.8rem;margin-top:.6rem}
+body.editing .rm{display:block}body.editing .add{display:inline-block}
+body.editing #bar{display:block}
+#bar{position:fixed;bottom:calc(.8rem + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);z-index:30;background:var(--ink);color:var(--bg);font-size:.8rem;padding:.6rem 1.1rem;border-radius:99px;white-space:nowrap}
+body.editing [contenteditable]{outline:1px dashed var(--gold);outline-offset:3px;cursor:text}
+body.editing .ph{outline:2px dashed var(--gold);outline-offset:-6px;cursor:pointer}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01s!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#couple">Our Story</a><a href="#cele">Celebration</a><a href="#note">Note</a><a href="#rsvp">RSVP</a>
+  <button id="mus" aria-pressed="false" aria-label="Music, currently off">♪ Off</button>
+  <button id="edt" aria-pressed="false">Edit</button>
+</nav>
+<div id="bar">Edit mode: tap any text or photo to change it</div>
+<input type="file" id="file" accept="image/*" hidden>
+
+<!-- 1 -->
+<header id="hero">
+  <div class="ph"></div>
+  <div class="in">
+    <h1 class="it">Every love story has a beginning.</h1>
+    <p>Meet the couple</p>
+    <a class="btn" href="#couple">Enter Our Story</a>
+  </div>
+</header>
+
+<!-- 2 -->
+<section id="couple">
+  <p class="sm rv">Two people. One story.</p>
+  <div class="ph rv"></div>
+  <div class="nm rv"><span data-e>BRIDE NAME</span><span class="amp">&amp;</span><span data-e>GROOM NAME</span></div>
+  <p class="lead rv" data-e>Somewhere between ordinary days and unexpected moments, we found something extraordinary.</p>
+</section>
+
+<!-- 3 -->
+<section id="story">
+  <h2 class="rv">Our Little Timeline</h2>
+  <div class="tl"><div class="spine" id="spine"></div>
+    <article class="ms"><div class="yr" data-e>2019</div><h3 data-e>Where it all began</h3><p data-e>A short line about how you met. Edit this text.</p><div class="ph sq"></div></article>
+    <article class="ms"><div class="yr" data-e>2021</div><h3 data-e>Our first adventure</h3><p data-e>A short line about your first trip or favourite memory.</p><div class="ph sq"></div></article>
+    <article class="ms"><div class="yr" data-e>2025</div><h3 data-e>The question</h3><p data-e>A short line about the proposal.</p><div class="ph sq"></div></article>
+    <article class="ms"><div class="yr" data-e>2026</div><h3 data-e>The beginning of forever</h3><p data-e>A short line about the wedding year.</p><div class="ph sq"></div></article>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="cele"><div class="w">
+  <h2 class="rv">Come celebrate with us</h2>
+  <div class="evs" id="evs"></div>
+  <p style="text-align:center;margin-top:1.6rem"><button class="btn add" id="addEv">+ Add event</button></p>
+</div></section>
+
+<!-- 5 -->
+<section id="note">
+  <div class="ph rv"></div>
+  <div class="rv">
+    <h2>A little note from us</h2>
+    <blockquote data-e>We would love to have you with us as we begin this beautiful new chapter. Your presence, love and blessings will make our celebration even more special.</blockquote>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="day">
+  <h2 class="it rv">Be there when we say I do.</h2>
+  <div class="facts rv">
+    <div><small>WEDDING DATE</small><span id="wDate" data-e>WEDDING DATE</span></div>
+    <div><small>VENUE</small><span id="wVen" data-e>VENUE</span></div>
+    <div><small>CITY</small><span id="wCity" data-e>CITY</span></div>
+  </div>
+  <a class="btn fill" id="cal" target="_blank" rel="noopener" href="#">Add to calendar</a>
+  <a class="btn" id="dir" target="_blank" rel="noopener" href="#">Get directions</a>
+  <input class="ed" id="dirIn" placeholder="GOOGLE MAPS LINK (optional, for Get directions)" style="max-width:420px;margin:1rem auto 0;color:#f6f1e7;border-color:#b59a5b">
+</section>
+
+<!-- 7 -->
+<section id="rsvp">
+  <div id="q">
+    <h2>Will you celebrate with us?</h2>
+    <div class="ch">
+      <button class="btn" id="yes" aria-pressed="false">Yes, I'll be there</button>
+      <button class="btn" id="no" aria-pressed="false">Sorry, can't make it</button>
+    </div>
+    <form id="f" novalidate>
+      <label>Guest name<input type="text" id="gn" autocomplete="name"></label>
+      <label id="cnt">Number of guests<input type="number" id="gc" min="1" max="20" value="1" inputmode="numeric"></label>
+      <label>Message (optional)<textarea id="gm"></textarea></label>
+      <p class="err" id="err" role="alert"></p>
+      <button class="btn fill" type="submit">Send reply</button>
+    </form>
+  </div>
+  <div id="ok"><h2 class="it" id="okT"></h2><p id="okM" style="color:var(--mute)"></p></div>
+</section>
+<footer class="sm">The Wedding Story</footer>
+
+<script>
+const $=id=>document.getElementById(id),Q=(s,r=document)=>[...r.querySelectorAll(s)];
+/* events */
+const evs=$('evs');
+function evHTML(t){return `<article class="ev"><button class="rm" aria-label="Remove event">×</button><h3 data-e>${t}</h3>
+<div class="r"><small>DATE</small><span data-e>EVENT DATE</span></div><div class="r"><small>TIME</small><span data-e>EVENT TIME</span></div><div class="r"><small>VENUE</small><span data-e>VENUE</span></div>
+<a class="loc" href="#" target="_blank" rel="noopener">View Location</a><input class="ed" placeholder="GOOGLE MAPS LINK"></article>`}
+['ENGAGEMENT','HALDI','SANGEET','WEDDING','RECEPTION'].forEach(t=>evs.insertAdjacentHTML('beforeend',evHTML(t)));
+evs.onclick=e=>{if(e.target.classList.contains('rm'))e.target.closest('.ev').remove();if(e.target.classList.contains('loc')&&e.target.getAttribute('href')==='#')e.preventDefault()};
+evs.oninput=e=>{if(e.target.classList.contains('ed'))e.target.previousElementSibling.href=e.target.value||'#'};
+$('addEv').onclick=()=>{evs.insertAdjacentHTML('beforeend',evHTML('NEW EVENT'));setEdit(true)};
+
+/* edit mode */
+let editing=false;
+function setEdit(on){editing=on;document.body.classList.toggle('editing',on);$('edt').setAttribute('aria-pressed',on);$('edt').textContent=on?'Done':'Edit';
+ Q('[data-e]').forEach(n=>on?n.setAttribute('contenteditable','true'):n.removeAttribute('contenteditable'))}
+$('edt').onclick=()=>setEdit(!editing);
+let target=null;
+document.addEventListener('click',e=>{const p=e.target.closest('.ph');if(editing&&p){target=p;$('file').click()}});
+$('file').onchange=e=>{const f=e.target.files[0];if(!f||!target)return;const r=new FileReader();
+ r.onload=()=>{target.style.backgroundImage=`url(${r.result})`;target.classList.add('has')};r.readAsDataURL(f);e.target.value=''};
+
+/* links */
+const txt=id=>$(id).textContent.trim();
+function dirHref(){return $('dirIn').value.trim()||'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(txt('wVen')+' '+txt('wCity'))}
+$('dir').onclick=()=>{$('dir').href=dirHref()};
+$('cal').onclick=()=>{const d=new Date(txt('wDate'));let u='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Our Wedding')+'&location='+encodeURIComponent(txt('wVen')+', '+txt('wCity'));
+ if(!isNaN(d)){const f=x=>x.getFullYear()+String(x.getMonth()+1).padStart(2,'0')+String(x.getDate()).padStart(2,'0');const n=new Date(d);n.setDate(n.getDate()+1);u+='&dates='+f(d)+'/'+f(n)}
+ $('cal').href=u};
+
+/* rsvp */
+let going=null;
+function pick(v){going=v;$('yes').setAttribute('aria-pressed',v);$('no').setAttribute('aria-pressed',!v);$('f').classList.add('show');$('cnt').hidden=!v;$('err').textContent=''}
+$('yes').onclick=()=>pick(true);$('no').onclick=()=>pick(false);
+$('f').onsubmit=e=>{e.preventDefault();const n=$('gn').value.trim();
+ if(!n){$('err').textContent='Please enter your name.';$('gn').focus();return}
+ const first=n.split(' ')[0],c=Math.max(1,+$('gc').value||1);
+ $('okT').textContent=going?`Thank you, ${first}. We can't wait to celebrate with you.`:`Thank you, ${first}. You will be missed.`;
+ $('okM').textContent=going?`We have noted ${c} ${c>1?'guests':'guest'} for you. Details will follow closer to the day.`:'Thank you for letting us know. We will be thinking of you on the day.';
+ $('q').style.display='none';$('ok').style.display='block'};
+
+/* scroll */
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in')}}),{threshold:.2});
+Q('.rv,.ms').forEach(n=>io.observe(n));
+const tl=Q('.tl')[0];
+function sp(){const r=tl.getBoundingClientRect(),p=Math.min(r.height,Math.max(0,innerHeight*.6-r.top));$('spine').style.height=p+'px'}
+addEventListener('scroll',sp,{passive:true});sp();
+
+/* music: soft synthesised pad, off by default */
+let ac,g,on=false;
+$('mus').onclick=()=>{on=!on;
+ if(on&&!ac){try{ac=new (window.AudioContext||window.webkitAudioContext)();g=ac.createGain();g.gain.value=0;g.connect(ac.destination);
+  [220,277.18,329.63,440].forEach((f,i)=>{const o=ac.createOscillator(),l=ac.createGain();o.type='sine';o.frequency.value=f;l.gain.value=.05;o.detune.value=i*3;o.connect(l);l.connect(g);o.start()})}catch(e){on=false}}
+ if(ac){ac.resume();g.gain.linearRampToValueAtTime(on?.6:0,ac.currentTime+1.5)}
+ $('mus').setAttribute('aria-pressed',on);$('mus').textContent=on?'♪ On':'♪ Off';$('mus').setAttribute('aria-label','Music, currently '+(on?'on':'off'))};
+</script>
+</body>
+</html>
